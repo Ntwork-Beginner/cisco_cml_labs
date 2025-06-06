@@ -1,0 +1,24 @@
+ip vrf D1_VRF
+rd 1:1
+exit
+
+int e0/0
+ip vrf forwarding D1_VRF
+ip add 192.168.1.11 255.255.255.0
+no shut
+
+ip name-server vrf D1_VRF 8.8.8.8
+
+
+
+
+ip vrf D2_VRF
+rd 2:2
+exit
+
+int e0/0
+ip vrf forwarding D2_VRF
+ip add 192.168.1.22 255.255.255.0
+no shut
+
+ip name-server vrf D2_VRF 8.8.8.8

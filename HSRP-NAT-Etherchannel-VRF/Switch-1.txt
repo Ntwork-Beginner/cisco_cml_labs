@@ -1,0 +1,3 @@
+int range e0/1-2
+channel-group 1 mode desirable
+exit
