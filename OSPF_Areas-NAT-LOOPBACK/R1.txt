@@ -1,0 +1,40 @@
+R1
+
+en
+conf ter
+hostname R1
+
+int e0/1
+ip address 192.1.11.1 255.255.255.0
+no shut
+
+int e0/2
+ip address 192.1.22.2 255.255.255.0
+no shut
+
+router ospf 1
+network 192.1.11.0 0.0.0.255 area 0
+network 192.1.22.0 0.0.0.255 area 0
+
+int e0/0
+ip address dhcp
+no shut
+
+show dhcp lease
+ip route 0.0.0.0 0.0.0.0 192.168.255.1
+
+router ospf 1
+default-information originate
+end
+
+int e0/0
+ip nat outside
+exit
+
+int range e0/1-2
+ip nat inside
+exit
+
+access-list 1 permit 192.1.0.0 0.0.255.255
+ip nat inside source list 1 int e0/0 overload
+

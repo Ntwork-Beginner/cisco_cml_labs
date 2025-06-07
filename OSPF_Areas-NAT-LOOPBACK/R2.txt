@@ -1,0 +1,20 @@
+R2
+
+en
+conf ter
+hostname R2
+
+int e0/0
+ip address 192.1.11.2 255.255.255.0
+no shut
+
+int e0/1
+ip address 192.1.33.1 255.255.255.0
+no shut
+
+router ospf 1
+network 192.1.11.0 0.0.0.255 area 0
+network 192.1.33.0 0.0.0.255 area 1
+
+ip name-server 8.8.8.8
+ip domain-lookup

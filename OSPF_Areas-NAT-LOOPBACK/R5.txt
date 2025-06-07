@@ -1,0 +1,20 @@
+R5
+
+en
+conf ter
+hostname R5
+
+int e0/0
+ip address 192.1.44.2 255.255.255.0
+no shut
+
+int loopback 0
+ip address 192.168.2.1 255.255.255.0
+no shut
+
+router ospf 1
+network 192.1.44.0 0.0.0.255 area 2
+network 192.168.2.0 0.0.0.255 area 2
+
+ip name-server 8.8.8.8
+ip domain-lookup
