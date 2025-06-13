@@ -16,7 +16,7 @@ ip vrf D2_VRF
 rd 2:2
 exit
 
-int e0/0
+int e0/1
 ip vrf forwarding D2_VRF
 ip add 192.168.1.22 255.255.255.0
 no shut
