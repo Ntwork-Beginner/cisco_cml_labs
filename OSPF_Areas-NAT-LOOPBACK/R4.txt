@@ -17,4 +17,4 @@ network 192.1.22.0 0.0.0.255 area 0
 network 192.1.44.0 0.0.0.255 area 2
 
 ip name-server 8.8.8.8
-ip domain-lookup
+ip domain lookup
