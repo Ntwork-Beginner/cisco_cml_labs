@@ -2,7 +2,7 @@ R3
 
 en
 conf ter
-hostname 3
+hostname R3
 
 int e0/0
 ip add 192.1.33.2 255.255.255.0
