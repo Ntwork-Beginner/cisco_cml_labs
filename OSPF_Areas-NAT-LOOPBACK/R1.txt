@@ -20,7 +20,6 @@ int e0/0
 ip address dhcp
 no shut
 
-show dhcp lease
 ip route 0.0.0.0 0.0.0.0 192.168.255.1
 
 router ospf 1
