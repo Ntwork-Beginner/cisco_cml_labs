@@ -27,6 +27,7 @@ router ospf 1
 default-information originate
 end
 
+conf ter
 int e0/0
 ip nat outside
 exit
