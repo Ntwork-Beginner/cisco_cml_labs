@@ -83,5 +83,7 @@ This lab simulates a redundant network topology using:
 
 ## 📁 Files
 
-- `Screenshot 2025-06-15 192435.png`: Topology diagram
-- `README.md`: This documentation
+![Screenshot 2025-06-15 192411](https://github.com/user-attachments/assets/1ef8a906-7afa-4339-ae97-304f289c3ab6)
+![Screenshot 2025-06-15 192435](https://github.com/user-attachments/assets/31ec770d-3305-47d9-ab38-ccf7c33fe7d5)
+
+![Screenshot 2025-06-15 192335](https://github.com/user-attachments/assets/98212d16-2d63-409a-b7c5-13486c9ef0a0)
