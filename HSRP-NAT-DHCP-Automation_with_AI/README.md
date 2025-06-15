@@ -8,8 +8,7 @@ This lab simulates a redundant network topology using:
 - **DHCP** for dynamic IP address allocation
 
 ![Network Topology]
-HSRP-NAT-DHCP-Automation_with_AI/Screenshot 2025-06-15 192435.png
-https://github.com/Ntwork-Beginner/cisco_cml_labs/blob/main/HSRP-NAT-DHCP-Automation_with_AI/Screenshot%202025-06-15%20192435.png
+![Screenshot 2025-06-15 192435](https://github.com/user-attachments/assets/ccc61c17-1199-4f58-9e72-f998a143115d)
 
 ---
 
