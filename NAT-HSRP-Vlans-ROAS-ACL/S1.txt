@@ -1,0 +1,43 @@
+S1
+
+en
+conf ter
+hostname S1
+
+int range e0/1-2
+channel-group 1 mode desirable
+exit
+
+int po1
+switchport trunk encapsulation dot1Q
+switchport mode trunk
+
+vlan 10
+ name HR
+
+vlan 20
+ name IT
+
+vlan 30
+ name AWS
+
+vlan 40
+ name Firewall
+ exit
+
+int e0/3
+switchport access vlan 10
+switchport mode access
+exit
+
+int e1/0
+switchport access vlan 20
+switchport mode access
+exit
+
+int e0/0
+switchport trunk encapsulation dot1Q
+switchport mode trunk
+exit
+
+do wr

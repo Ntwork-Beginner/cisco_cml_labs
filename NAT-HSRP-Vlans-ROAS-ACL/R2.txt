@@ -1,0 +1,80 @@
+R2
+
+en
+conf ter
+hostname R2
+
+int e0/0
+ip add dhcp
+no shut
+ip nat outside
+exit
+
+int e0/1
+no shut
+int e0/1.10
+encapsulation dot1Q 10
+ip add 192.168.10.2 255.255.255.0
+ip nat inside
+standby 1 ip 192.168.10.1
+exit
+
+int e0/1.20
+encapsulation dot1Q 20
+ip add 192.168.20.2 255.255.255.0
+ip nat inside
+standby 2 ip 192.168.20.1
+exit
+
+int e0/1.30
+encapsulation dot1Q 30
+ip add 192.168.30.2 255.255.255.0
+ip nat inside
+standby 3 ip 192.168.30.1
+exit
+
+int e0/1.40
+encapsulation dot1Q 40
+ip add 192.168.40.2 255.255.255.0
+ip nat inside
+standby 4 ip 192.168.40.1
+exit
+
+ip dhcp excluded-address 192.168.10.1 192.168.10.99
+ip dhcp excluded-address 192.168.10.100 192.168.10.150
+ip dhcp pool VLAN10
+network 192.168.10.0 255.255.255.0
+default-router 192.168.10.1
+dns-server 8.8.8.8
+exit
+
+ip dhcp excluded-address 192.168.20.1 192.168.20.99
+ip dhcp excluded-address 192.168.20.100 192.168.20.150
+ip dhcp pool VLAN20
+network 192.168.20.0 255.255.255.0
+default-router 192.168.20.1
+dns-server 8.8.8.8
+exit
+
+ip dhcp excluded-address 192.168.30.1 192.168.30.99
+ip dhcp excluded-address 192.168.30.100 192.168.30.150
+ip dhcp pool VLAN30
+network 192.168.30.0 255.255.255.0
+default-router 192.168.30.1
+dns-server 8.8.8.8
+exit
+
+ip dhcp excluded-address 192.168.40.1 192.168.40.99
+ip dhcp excluded-address 192.168.40.100 192.168.40.150
+ip dhcp pool VLAN40
+network 192.168.40.0 255.255.255.0
+default-router 192.168.40.1
+dns-server 8.8.8.8
+exit
+
+access-list 100 permit ip 192.168.10.0 0.0.0.255 any
+access-list 100 permit ip 192.168.20.0 0.0.0.255 any
+access-list 100 deny ip any any log
+
+ip nat inside source list 100 interface Ethernet0/0 overload
+do wr
